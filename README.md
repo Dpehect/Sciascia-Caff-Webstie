@@ -1,17 +1,17 @@
 # Sciascia-Caff-Webstie
 
-Sciascia Caffè 1919 için hazırlanmış, tek sayfalı ve statik bir kahve markası web arayüzüdür. Projenin amacı; güçlü bir ilk ekran, ürün keşfi, marka hikayesi, menü sunumu, açılış saatleri ve müşteri yorumlarını modern bir landing page akışı içinde birleştirmektir.
+Sciascia Caffe 1919 is a single-page, static coffee brand interface built as a polished landing experience. The page presents a strong hero section, product discovery, brand story panels, a menu grid, opening-hours content, and testimonials in one continuous frontend flow.
 
-Site **Yunus Emre Gurlek** tarafından hazırlanmıştır. Footer içinde proje kredisi **SoftBridge Solutions** olarak gösterilir.
+The site is authored by **Yunus Emre Gurlek**. The footer project credit is shown as **SoftBridge Solutions**.
 
 ## Technical Overview
 
-Bu proje Next.js App Router mimarisiyle geliştirilmiş bir frontend uygulamasıdır. Backend, API route, CMS, veritabanı veya runtime environment değişkeni gerektirmez. İçerik ve görsel yapı component seviyesinde tutulur; statik assetler `public/assets` altında yönetilir.
+This is a frontend-only Next.js application using the App Router. It does not depend on a backend service, API route, CMS, database, or runtime environment variables. All visible content is handled in components, while static media is organized under `public/assets`.
 
-Ana teknolojiler:
+Core technologies:
 
 - Next.js 15 App Router
-- React 18 client/server component yapısı
+- React 18 client and server components
 - TypeScript
 - TailwindCSS
 - GSAP ScrollTrigger
@@ -22,79 +22,79 @@ Ana teknolojiler:
 
 ## Application Structure
 
-`app/layout.tsx` global metadata, font yükleme, Header ve Footer yerleşimini yönetir. SEO title, description, Open Graph, Twitter Card, creator, publisher ve application metadata bu dosyada merkezi olarak tanımlanır.
+`app/layout.tsx` owns global metadata, font loading, and the shared Header/Footer shell. It centralizes SEO title, description, Open Graph data, Twitter Card data, creator, publisher, icons, and application metadata.
 
-`app/page.tsx` ana landing page kompozisyonudur. Sayfa Hero, Explore, About, Menu, Opening Hours ve Testimonials bölümlerini sıralar. Locomotive Scroll client tarafında dinamik import ile başlatılır.
+`app/page.tsx` composes the main landing page. It renders the Hero, Explore, About, Menu, Opening Hours, and Testimonials sections. Locomotive Scroll is loaded on the client through a dynamic import after mount.
 
-`components/Hero.tsx` video arka planlı ilk ekranı oluşturur. Marka başlığı, kısa açıklama, dekoratif badge, separator ve CTA bu bölümde yer alır.
+`components/Hero.tsx` renders the first viewport with a video background, dark overlay, badge, brand headline, separator, short copy, and primary CTA.
 
-`components/Explore/Explore.tsx` kahve türlerini iki metin kolonu ve merkezde ürün görseliyle sunar. Bardak görseli `public/assets/explore/cup.png` dosyasından gelir ve Sciascia Caffè yazısı asset üzerinde işlenmiştir.
+`components/Explore/Explore.tsx` presents coffee categories with two text columns and a central product image. The cup asset is loaded from `public/assets/explore/cup.png` and carries the Sciascia Caffe label directly on the image.
 
-`components/About.tsx` GSAP ScrollTrigger ile yatay panel geçişi kullanan marka hikayesi bölümüdür. Journey, Promise ve Team panelleri ayrı içerik blokları olarak tanımlanır.
+`components/About.tsx` contains the horizontally pinned brand story section powered by GSAP ScrollTrigger. The section uses separate Journey, Promise, and Team content panels.
 
-`components/Menu/Menu.tsx` statik kahve menüsünü grid yapısında gösterir. Ürün adları, açıklamalar, fiyatlar ve görseller component içindeki veri dizisi üzerinden render edilir.
+`components/Menu/Menu.tsx` renders a static coffee menu as a responsive grid. Item names, descriptions, prices, and image paths are stored in the component data array.
 
-`components/OpeningHours.tsx` açılış saatleri bölümünü arka plan görseli, overlay ve program badge asset’i ile sunar.
+`components/OpeningHours.tsx` renders the opening-hours block with a background image, overlay, badge, and schedule artwork.
 
-`components/Testimonials.tsx` Swiper tabanlı yorum carousel yapısını içerir.
+`components/Testimonials.tsx` provides a Swiper-based carousel for customer feedback.
 
-`components/Footer.tsx` logo, navigasyon linkleri, SoftBridge Solutions proje kredisi ve telif satırını yönetir. Sosyal medya ikonları kaldırılmıştır.
+`components/Footer.tsx` manages the footer logo, navigation links, SoftBridge Solutions project credit, and copyright line. Social media icon links have been removed.
 
 ## Branding
 
-Görünen marka adı:
+Visible brand name:
 
-`Sciascia Caffè 1919`
+`Sciascia Caffe 1919`
 
-Temel marka yüzeyleri:
+Primary brand surfaces:
 
 - Header logo
 - Hero headline
 - SEO metadata
 - Open Graph metadata
 - Footer logo
-- About copy
+- About section copy
 - Product cup asset
-- README ve LICENSE attribution
+- README and LICENSE attribution
 
 ## Assets
 
-Ana görsel dosyaları `public/assets` altında tutulur.
+Main visual assets live under `public/assets`.
 
-- `public/assets/logo.svg`: Sciascia Caffè 1919 wordmark
-- `public/assets/explore/cup.png`: Sciascia Caffè yazılı bardak görseli
-- `public/assets/hero/video.mp4`: Hero video arka planı
-- `public/assets/about/*`: About bölüm görselleri
-- `public/assets/menu/*`: Menü ürün görselleri
-- `public/assets/opening-hours/*`: Açılış saatleri görselleri
-- `public/assets/footer/bg.png`: Footer arka planı
+- `public/assets/logo.svg`: Sciascia Caffe 1919 wordmark
+- `public/assets/explore/cup.png`: coffee cup image with the Sciascia Caffe label
+- `public/assets/hero/video.mp4`: hero video background
+- `public/assets/about/*`: images used in the About section
+- `public/assets/menu/*`: menu item images
+- `public/assets/opening-hours/*`: opening-hours visuals
+- `public/assets/footer/bg.png`: footer background
 
 ## Styling
 
-TailwindCSS yapılandırması `tailwind.config.ts` içinde yer alır. Renkler, font aileleri, container davranışı, özel breakpoint ve background image tokenları bu dosyada tanımlanır. Global yardımcı sınıflar `app/globals.css` içinde tutulur.
+TailwindCSS is configured in `tailwind.config.ts`. The configuration defines color tokens, font families, container behavior, a custom breakpoint, and reusable background image tokens. Global utility classes such as heading, lead, and button styles live in `app/globals.css`.
 
-Kullanılan ana tasarım tokenları:
+Primary design tokens:
 
-- `primary`: koyu kahve/siyah arka plan yüzeyleri
-- `accent`: kahve tonlu vurgu rengi
-- `font-primary`: başlık karakteri
-- `font-secondary`: gövde ve UI metinleri
+- `primary`: dark coffee and black surfaces
+- `accent`: warm coffee-toned highlight color
+- `font-primary`: display heading type
+- `font-secondary`: body and interface type
 
 ## Animation Model
 
-Animasyon yapısı üç farklı katmanda çalışır:
+Animation is split across three focused layers:
 
-- Framer Motion: navigasyon açılışı, menü animasyonları ve UI geçişleri
-- GSAP ScrollTrigger: About bölümündeki pinned horizontal scroll
-- Locomotive Scroll: smooth scroll ve parallax davranışı
+- Framer Motion handles navigation transitions, menu motion, and small UI animation states.
+- GSAP ScrollTrigger controls the pinned horizontal story movement in the About section.
+- Locomotive Scroll provides smooth scroll behavior and parallax attributes.
 
-Bu ayrım, her animasyon türünü kendi güçlü olduğu kullanım alanında tutar ve componentlerin okunabilir kalmasını sağlar.
+This separation keeps complex animation behavior isolated by responsibility and makes each component easier to maintain.
 
 ## Vercel Readiness
 
-Proje Vercel üzerinde Next.js uygulaması olarak çalışacak şekilde hazırlanmıştır. `vercel.json` yalnızca framework bilgisini taşır ve App Router akışını bozabilecek statik SPA rewrite kuralları içermez.
+The project is prepared for Vercel as a Next.js application. `vercel.json` only declares the Next.js framework and avoids static SPA rewrite rules that could interfere with App Router routing.
 
-Next image kalite uyarıları için `next.config.mjs` içinde `images.qualities` yapılandırması eklenmiştir. Bu ayar, ilerideki Next sürümlerinde `quality={100}` kullanılan görseller için uyumluluk sağlar.
+`next.config.mjs` includes an `images.qualities` entry for the existing `quality={100}` image usage. This keeps the project aligned with current Next.js image configuration expectations and avoids future compatibility warnings.
 
 ## Ownership
 
@@ -108,4 +108,4 @@ Footer project credit:
 
 ## License
 
-MIT License. Copyright bilgisi LICENSE dosyasında `Yunus Emre Gurlek` olarak tanımlanmıştır.
+MIT License. The copyright owner is defined as `Yunus Emre Gurlek` in the LICENSE file.
